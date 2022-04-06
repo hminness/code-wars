@@ -50,3 +50,26 @@ function pipeFix(numbers){
     return newArray;
   }
 
+  // In this simple exercise, you will build a program that takes a value, integer , and returns a list of its multiples up to another value, limit . If limit is a multiple of integer, it should be included as well. There will only ever be positive integers passed into the function, not consisting of 0. The limit will always be higher than the base.
+  function findMultiples(integer, limit) {
+    const newArray = []
+    for (let i = integer; i <= limit; i += integer) {
+      newArray.push(i);
+    }
+    return newArray;
+}
+
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+const removeEveryOther = arr => arr.filter((element, index) => index % 2 === 0)
+
+// Given an array of integers your solution should find the smallest integer.
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args)
+  }
+}
+
+// Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+// The output should be two capital letters with a dot separating them.
+const abbrevName = name => name.split(' ').map((names) => names[0]).join('.').toUpperCase();
