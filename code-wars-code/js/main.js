@@ -79,3 +79,21 @@ const digitize = n => n.toString().split('').map(x => parseInt(x)).reverse();
 
 // Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
 const squareDigits = num => parseInt(num.toString().split('').map(x => x * x).join(''));
+
+// Your task is to write a function that takes a string and return a new string with all vowels removed.
+const disemvowel = str => str.replace(/[aeiou]/gi, '');
+
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+function highAndLow(numbers){
+  numbers = numbers.split(' ').map(Number)
+  return Math.max(...numbers) + ' ' + Math.min(...numbers)
+}
+
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+const descendingOrder = n => parseInt(n.toString().split('').sort((a,b)=>b - a).join(''))
+
+// You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+const getMiddle = s => s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+
+// Given an integral number, determine if it's a square number:
+const isSquare = (n)=>n>=0 && Math.sqrt(n)%1 === 0;
