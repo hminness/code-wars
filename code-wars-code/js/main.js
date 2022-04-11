@@ -73,3 +73,9 @@ class SmallestIntegerFinder {
 
 // The output should be two capital letters with a dot separating them.
 const abbrevName = name => name.split(' ').map((names) => names[0]).join('.').toUpperCase();
+
+// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+const digitize = n => n.toString().split('').map(x => parseInt(x)).reverse();
+
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+const squareDigits = num => parseInt(num.toString().split('').map(x => x * x).join(''));
