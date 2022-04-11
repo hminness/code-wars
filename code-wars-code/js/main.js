@@ -97,3 +97,9 @@ const getMiddle = s => s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 
 
 // Given an integral number, determine if it's a square number:
 const isSquare = (n)=>n>=0 && Math.sqrt(n)%1 === 0;
+
+// Simple, given a string of words, return the length of the shortest word(s).
+function findShort(s){
+  s = s.split(' ').sort((a, b) => a.length - b.length);
+  return s[0].length
+}
