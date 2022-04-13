@@ -103,3 +103,6 @@ function findShort(s){
   s = s.split(' ').sort((a, b) => a.length - b.length);
   return s[0].length
 }
+
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+const check = (a, x) => a.includes(x)
