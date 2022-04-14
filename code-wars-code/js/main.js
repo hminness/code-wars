@@ -106,3 +106,14 @@ function findShort(s){
 
 // You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
 const check = (a, x) => a.includes(x)
+
+// Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+String.prototype.toJadenCase = function (str) {
+  return this.split(' ').map(a => a[0].toUpperCase() + a.substring(1)).join(" ");
+};
+
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+const accum = s => s.split('').map((a, i) => (a.toUpperCase() + a.toLowerCase().repeat(i))).join("-");
