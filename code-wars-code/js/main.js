@@ -117,3 +117,8 @@ String.prototype.toJadenCase = function (str) {
 // accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
 // accum("cwAt") -> "C-Ww-Aaa-Tttt"
 const accum = s => s.split('').map((a, i) => (a.toUpperCase() + a.toLowerCase().repeat(i))).join("-");
+
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+// After your function finds the needle it should return a message (as a string) that says:
+// "found the needle at position " plus the index it found the needle
+const findNeedle = haystack => `found the needle at position ${haystack.findIndex(x => x === 'needle')}`
