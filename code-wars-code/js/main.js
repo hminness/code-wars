@@ -122,3 +122,19 @@ const accum = s => s.split('').map((a, i) => (a.toUpperCase() + a.toLowerCase().
 // After your function finds the needle it should return a message (as a string) that says:
 // "found the needle at position " plus the index it found the needle
 const findNeedle = haystack => `found the needle at position ${haystack.findIndex(x => x === 'needle')}`
+
+// Clock shows h hours, m minutes and s seconds after midnight.
+// Your task is to write a function which returns the time since midnight in milliseconds.
+function past(h, m, s){
+  return (3.6e+6 * h) + (60000 * m) + (1000 * s)
+}
+
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+function lovefunc (flower1, flower2) {
+  if (flower1 % 2 === 0 && flower2 % 2 !== 0 || flower2 % 2 === 0 && flower1 % 2 !== 0){
+    return true
+  } else {
+    return false
+  }     
+}
