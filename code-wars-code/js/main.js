@@ -138,3 +138,25 @@ function lovefunc (flower1, flower2) {
     return false
   }     
 }
+
+// Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+// Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+// Create a function which translates a given DNA string into RNA.
+const DNAtoRNA = dna => dna.replace(/[T]/gi, 'U');
+
+// In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". You function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+function DNAStrand(dna){
+  let compDNA = '';
+  for (const symbol of dna) {
+    if (symbol === 'A') {
+      compDNA += 'T'
+    } else if (symbol === 'T') {
+      compDNA += 'A' 
+    } else if (symbol === 'C') {
+      compDNA += 'G'
+    } else if (symbol === 'G') {
+      compDNA += 'C'
+    }
+  }
+  return compDNA
+}
