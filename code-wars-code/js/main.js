@@ -167,3 +167,36 @@ function maskify(cc) {
   return cc.substring(0, cc.length - 4).replace(/[a-z\d]/gi,"#") + 
   cc.substring(cc.length - 4, cc.length);
 }
+
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+function sumTwoSmallestNumbers(numbers) {  
+  return numbers.sort((a,b)=>a-b).slice(0,2).reduce((a,b)=>a+b,0)
+}
+
+// Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+function getSum( a,b )
+{
+   let sum = 0;
+   if (a < b) {
+     for (let i = a; i <= b; i++) {
+       sum+= i;
+     }
+   } else if (a > b) {
+     for (let i = b; i <= a; i++) {
+       sum += i;
+     }
+   } else return a;
+   return sum;
+}
+
+// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+function longest(s1, s2) {
+  const s3 = s1 + s2;
+  let s4 = '';
+  for(let i = 0; i < s3.length; i++){
+     if(s4.includes(s3[i]) === false){
+      s4 += s3[i]
+    }
+  }
+  return s4.split('').sort().join('');
+}
