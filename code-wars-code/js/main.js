@@ -203,15 +203,18 @@ function longest(s1, s2) {
 
 
 // In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
-
 function nbYear(p0, percent, aug, p) {
   percent = percent/100;
   let pop = p0;
   let years = 0;
+  console.log(p0, percent, aug, p)
   do {
-    pop += (pop * percent) + aug
+    pop = Math.trunc(pop +(pop * percent) + aug)
     years += 1
-    console.log(years)
   } while (pop < p)
   return years;
 }
+
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+// If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+const findNextSquare = (sq) => (Math.sqrt(sq) % 1 === 0) ? (Math.sqrt(sq) +1)*(Math.sqrt(sq)+1) : -1; 
