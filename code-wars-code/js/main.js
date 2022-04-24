@@ -222,3 +222,30 @@ const findNextSquare = (sq) => (Math.sqrt(sq) % 1 === 0) ? (Math.sqrt(sq) +1)*(M
 // Write a function which calculates the average of the numbers in a given list.
 // Note: Empty arrays should return 0.
 const find_average = array =>  array.length > 0 ? array.reduce((a,b)=>a+b) / array.length : 0;
+
+// Make a simple function called greet that returns the most-famous "hello world!".
+const greets = _ => 'hello world!'
+
+// Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+// If the input is an empty array or is null, return an empty array.
+function countPositivesSumNegatives(input) {
+  let count = 0;
+  let sum = 0;
+  if (!input || input.length === 0) {return [];}
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] > 0) {
+      count += 1;
+    } else {
+      sum += input[i]
+    }
+  }
+  return [count,sum]
+}
+
+// Complete the solution so that it reverses all of the words within the string passed in.
+function reverseWords(str){
+  return str.split(' ').reverse().join(' ');
+}
+
+// Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+const greet = name => (name === "Johnny") ? "Hello, my love!": "Hello, " + name + "!";
