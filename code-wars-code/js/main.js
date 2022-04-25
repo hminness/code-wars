@@ -249,3 +249,9 @@ function reverseWords(str){
 
 // Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
 const greet = name => (name === "Johnny") ? "Hello, my love!": "Hello, " + name + "!";
+
+// Make a program that filters a list of strings and returns a list with only your friends name in it.
+// If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+function friend(friends){
+  return friends.filter(friend=> friend.length === 4)
+}
