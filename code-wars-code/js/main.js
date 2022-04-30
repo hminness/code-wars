@@ -298,3 +298,22 @@ function fakeBin(x){
   x.split('').forEach(a=> realBinary +=(a<5 ? 0 : 1 ))
   return realBinary
 }
+
+// Given an array of integers, find the one that appears an odd number of times.
+// There will always be only one integer that appears an odd number of times.
+function findOdd(A) {
+  let count = 0;
+  let hold = '';
+  A = A.sort((a,b)=>a-b)
+  for (const a of A) {
+    if (hold === a) {
+      count += 1;
+    } else if (count % 2 !== 0) {
+      return hold
+    } else {
+      count = 1;
+      hold = a
+    }
+  }
+  return hold
+}
