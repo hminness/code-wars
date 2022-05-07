@@ -65,3 +65,11 @@ const solution = string => string.split(/(?=[A-Z])/).join(' ');
 function arrayPlusArray(arr1, arr2) {
   return arr1.reduce((a,b)=>a+b) + arr2.reduce((a,b)=>a+b); //something went wrong
 }
+
+// Digital root is the recursive sum of all the digits in a number.
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+function digital_root(n) {
+  n = String(n).split('').map(a=>Number(a)).reduce((a,b)=>a+b)  
+  console.log(n)
+  return (n<10) ? n : digital_root(n)
+}
