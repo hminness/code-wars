@@ -108,3 +108,18 @@ function makeObject(str) {
   }
   return obj
 }
+
+// Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+function validParentheses(parens) {
+  let count = 0;
+  for (a of parens) {
+    if (a === '(') {
+      count += 1
+    } else if ((a === ')') && (count > 0)) {
+      count -= 1
+    } else {
+      return false
+    }
+  }
+  return (count === 0) ? true : false
+}
