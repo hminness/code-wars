@@ -73,3 +73,38 @@ function digital_root(n) {
   console.log(n)
   return (n<10) ? n : digital_root(n)
 }
+
+// Scramblies
+// Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+// Notes:
+// Only lower case letters will be used (a-z). No punctuation or digits will be included.
+// Performance needs to be considered.
+//My answer below, worked but timed out
+function scramble(str1, str2) {
+  let count = 0
+  str1 = str1.split('').reduce((a,b)=> {
+    a[b] ? a[b]++ : a[b] = 1;
+    return a;}, {});
+  str2 = str2.split('').reduce((a,b)=> {
+    a[b] ? a[b]++ : a[b] = 1;
+    return a;}, {});
+  for (let [key2, value2] of Object.entries(str2)) {
+    for (let [key1, value1] of Object.entries(str1)) {
+      if (key1 === key2 && value1 >= value2) count += 1
+      }
+    }
+  return count === Object.keys(str2).length
+}
+// After looking up results
+function scramble(str1, str2) {
+  let obj1 = makeObject(str1)
+  let obj2 = makeObject(str2)
+  return Object.entries(obj2).every(([key, val]) => obj1[key] >= val)
+}
+function makeObject(str) {
+  let obj = {}
+  for (const char of str) {
+    obj[char] = (obj[char] || 0) + 1;
+  }
+  return obj
+}
