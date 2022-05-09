@@ -123,3 +123,42 @@ function validParentheses(parens) {
   }
   return (count === 0) ? true : false
 }
+
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+// Return True if yes, False otherwise :)
+function hero(bullets, dragons){
+  return (bullets >= 2*dragons)
+}
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+function simpleMultiplication(number) {
+  return number % 2 === 0 ? number * 8 : number * 9
+}
+
+// Create a function which answers the question "Are you playing banjo?".
+// If your name starts with the letter "R" or lower case "r", you are playing banjo!
+// The function takes a name as its only argument, and returns one of the following strings:
+// name + " plays banjo" 
+// name + " does not play banjo"
+// Names given are always valid strings.
+function areYouPlayingBanjo(name) {
+  const plays = `${name} plays banjo`
+  const notPlays = `${name} does not play banjo`
+  return name[0].toLowerCase() === 'r' ? plays : notPlays
+}
+
+// You take your son to the forest to see the monkeys. You know that there are a certain number there (n), but your son is too young to just appreciate the full number, he has to start counting them from 1.
+// As a good parent, you will sit and count with him. Given the number (n), populate an array with all numbers up to and including that number, but excluding zero.
+function monkeyCount(n) {
+  const count = [];
+  for (let i = 1; i <= n; i++) {
+    count.push(i)
+  }
+  return count
+}
+
+// Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.
+// Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+var countBits = function(n) {
+  return n.toString(2).split('').map(a=>Number(a)).reduce((a,b)=>a+b,0)
+};
