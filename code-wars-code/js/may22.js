@@ -161,4 +161,19 @@ function monkeyCount(n) {
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 var countBits = function(n) {
   return n.toString(2).split('').map(a=>Number(a)).reduce((a,b)=>a+b,0)
-};
+}
+
+// Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+function createPhoneNumber(numbers){
+  return '(' + numbers.slice(0,3).join('') + ') ' + numbers.slice(3,6).join('') + '-' + numbers.slice(6).join('');
+}
+
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+function findOutlier(integers){
+  const even = integers.filter(a=>a%2===0)
+  if (even.length === 1) {
+    return even[0]
+  } else {
+    return integers.filter(a=>a%2!==0)[0]
+  }
+}
