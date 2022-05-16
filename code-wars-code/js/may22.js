@@ -263,3 +263,15 @@ function isValidWalk(walk) {
   })
   return count === 0 ? true : false 
 }
+
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+// The binary number returned should be a string.
+function addBinary(a,b) {
+  return (a+b).toString(2)
+}
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+// If anything in the text isn't a letter, ignore it and don't return it.
+function alphabetPosition(text) {
+  return text.toLowerCase().split('').map(a=>(a.charCodeAt(0) - 96)).filter(b=> b>=1 && b<=26).join(' ')
+}
