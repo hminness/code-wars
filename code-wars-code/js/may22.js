@@ -202,3 +202,23 @@ function sumArray(array) {
     return (array.reduce((c,d)=>c + d)) - (array[0] + array[array.length-1]);
   }
 }
+
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+function persistence(num) {
+  let count = 0;
+  while (num.toString().length > 1) {
+    count += 1
+    num = num.toString().split('').map(a=>Number(a)).reduce((a,b)=>a*b)
+  }
+  return count
+}
+
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+function duplicateEncode(word){
+  let newWord = '';
+  word = word.toLowerCase().split('');
+  for (let i = 0; i < word.length; i++) {
+    newWord +=  (word.indexOf(word[i]) === word.lastIndexOf(word[i])) ? '(' : ')'
+  }
+  return newWord;
+}
