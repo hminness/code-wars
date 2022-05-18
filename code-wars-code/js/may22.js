@@ -222,3 +222,24 @@ function duplicateEncode(word){
   }
   return newWord;
 }
+
+// Well, you may have guessed it by now, but to be clear: you need to create a fibonacci function that given a signature array/list, returns the first n elements - signature included of the so seeded sequence.
+// Signature will always contain 3 numbers; n will always be a non-negative number; if n == 0, then return an empty array (except in C return NULL) and be ready for anything else which is not clearly specified ;)
+// If you enjoyed this kata more advanced and generalized version of it can be found in the Xbonacci kata
+function tribonacci(signature,n){
+  let newArr = [];
+  if (n<3) {
+    for (let i = 0; i < n; i++) {
+        newArr.push(signature[i])
+    }
+    return newArr
+  } else {
+    newArr = signature;  
+  }
+    
+  for (let i = 3; i < n; i++) {
+      newArr.push(newArr[i-1] + newArr[i-2] + newArr[i-3])
+  }
+    
+  return newArr
+}
