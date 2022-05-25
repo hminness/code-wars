@@ -305,3 +305,15 @@ var uniqueInOrder=function(iterable){
   }
   return array
 }
+
+// Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case)
+
+  function toCamelCase(str){
+    return str.replace(/[-_]+(.)/g, (match, word) => word.toUpperCase());
+  }
+
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+// If the function is passed a valid PIN string, return true, else return false.
+function validatePIN (pin) {
+  return /^\d+$/.test(pin) && (pin.length === 4 || pin.length === 6)
+}
