@@ -61,3 +61,7 @@ function sumMix(x){
     return x.reduce((a,b)=>a + Number(b),0)
 }
 
+// Code as fast as you can! You need to double the integer and return it.
+function doubleInteger(i) {
+    return i * 2
+}
