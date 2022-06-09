@@ -74,3 +74,8 @@ function divisors(integer) {
     }
     return array.length > 0 ? array : `${integer} is prime`
   };
+
+//   Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending){
+    return (str.substring(str.length - ending.length) === ending) ? true : false
+  }
