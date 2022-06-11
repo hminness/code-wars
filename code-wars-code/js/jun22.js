@@ -86,3 +86,4 @@ function removeSmallest(numbers) {
     const numIndex = numbers.indexOf(Math.min(...numbers))
     return [...numbers.slice(0,numIndex), ...numbers.slice(numIndex + 1)]
 }
+
