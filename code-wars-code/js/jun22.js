@@ -93,3 +93,12 @@ function minMax(arr){
   return [Math.min(...arr),Math.max(...arr)];
 }
 
+// Write a function which takes a list of strings and returns each line prepended by the correct number.
+// The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+var number=function(array){
+  const arrayTwo = [];
+  for (let i = 0; i < array.length; i++) {
+    arrayTwo.push(`${i+1}: ${array[i]}`)
+  }
+  return arrayTwo;
+}
