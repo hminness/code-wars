@@ -102,3 +102,14 @@ var number=function(array){
   }
   return arrayTwo;
 }
+
+// In this kata you get the start number and the end number of a region and should return the count of all numbers except numbers with a 5 in it. The start and the end number are both inclusive!
+// The result may contain fives. ;-)
+// The start number will always be smaller than the end number. Both numbers can be also negative!
+function dontGiveMeFive(start, end) {
+  let array = [];
+  for (let i = start; i <= end; i++) {
+    if ((i+'').indexOf('5') === -1) array.push(i)
+  }
+  return array.length
+}
