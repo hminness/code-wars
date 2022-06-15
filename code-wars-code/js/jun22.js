@@ -113,3 +113,9 @@ function dontGiveMeFive(start, end) {
   }
   return array.length
 }
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+// Complete the method which accepts such an array, and returns that single different number.
+function stray(numbers) {
+  return (numbers.sort().indexOf(numbers[0]) === numbers.sort().lastIndexOf(numbers[0])) ? numbers[0] : numbers[numbers.length-1]
+}
