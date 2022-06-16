@@ -119,3 +119,12 @@ function dontGiveMeFive(start, end) {
 function stray(numbers) {
   return (numbers.sort().indexOf(numbers[0]) === numbers.sort().lastIndexOf(numbers[0])) ? numbers[0] : numbers[numbers.length-1]
 }
+
+// Count the number of divisors of a positive integer n.
+function getDivisorsCnt(n){
+  let count = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) count += 1
+  }
+  return count
+}
